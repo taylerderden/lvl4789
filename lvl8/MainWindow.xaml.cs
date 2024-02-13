@@ -28,7 +28,7 @@ namespace lvl8
 
         private void btnProductPage_Click(object sender, RoutedEventArgs e)
         {
-            FrameNav.Navigate(new pageProduct());
+            FrameNav.Navigate(new page_Product());
         }
     }
 }

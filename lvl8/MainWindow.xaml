@@ -5,9 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lvl8"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="544" Width="928">
     <Grid>
-        <Button x:Name="btnProductPage" Content="Product" Margin="10,41,648,359" Click="btnProductPage_Click"/>
-        <Frame x:Name="FrameNav" Margin="172,0,0,0"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="38*"/>
+            <ColumnDefinition Width="187*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnProductPage" Content="Product" Margin="10,41,37,437" Click="btnProductPage_Click"/>
+        <Frame x:Name="FrameNav" Grid.Column="1"/>
     </Grid>
 </Window>
