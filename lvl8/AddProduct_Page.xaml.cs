@@ -30,20 +30,21 @@ namespace lvl8
         }
         private void Button_SaveClick(object sender, RoutedEventArgs e)
         {
-            if (service.Id == 0)
+            if (product.Id == 0)
             {
-                CoreModel.init().Services.Add(service);
+                CoreModel.init().Products.Add(product);
             }
 
             CoreModel.init().SaveChanges();
+            NavigationService.GoBack();
         }
+
         private void AddServices_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            if (service.Id != 0)
+            if (product.Id != 0)
             {
-                CoreModel.init().Entry(service).Reload();
+                CoreModel.init().Entry(product).Reload();
             }
-
         }
     }
 }

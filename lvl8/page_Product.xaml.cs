@@ -95,5 +95,33 @@ namespace lvl8
         {
             NavigationService.Navigate(new AddProduct_Page(new Product()));
         }
+
+        private void Button_DelClick(object sender, RoutedEventArgs e)
+        {
+            if (lvProduct.SelectedItems.Count > 1)
+            {
+                return;
+            }
+
+            Product prod = lvProduct.SelectedItem as Product;
+
+            if (MessageBox.Show("Delete?", "Realy delete?", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                CoreModel.init().Products.Remove(prod);
+                CoreModel.init().SaveChanges();
+                Update();
+            }
+        }
+
+        private void Button_UpdateClick(object sender, RoutedEventArgs e)
+        {
+            Product productEdit= lvProduct.SelectedItem as Product;
+            NavigationService.Navigate(new AddProduct_Page(productEdit));
+        }
+
+        private void AddProduct_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            Update();
+        }
     }
 }

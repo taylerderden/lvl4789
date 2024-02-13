@@ -5,17 +5,18 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:lvl8"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddProduct_Page">
+      d:DesignHeight="359" d:DesignWidth="648"
+      Title="AddProduct_Page"
+      IsVisibleChanged="AddServices_IsVisibleChanged">
 
     <Grid Background="Ivory">
-        <Button Content="Save" HorizontalAlignment="Left" Margin="296,382,0,0" VerticalAlignment="Top" FontSize="20" Width="180" Click="Button_SaveClick"/>
-
+        <Button Content="Save" HorizontalAlignment="Left" Margin="216,305,0,0" VerticalAlignment="Top" FontSize="20" Width="180" Click="Button_SaveClick"/>
         <Label Content="Title" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.542,0.536" FontSize="20"/>
-        <Label Content="Cost" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top" FontSize="20"/>
-
-        <TextBox Text="{Binding Title}" HorizontalAlignment="Center" Margin="0,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="780" FontSize="20"/>
-        <TextBox Text="{Binding Cost}" HorizontalAlignment="Center" Margin="0,156,0,0" VerticalAlignment="Top" Width="780" FontSize="20"/>
+        <Label Content="Article" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="Cost" HorizontalAlignment="Left" Margin="18,197,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox Text="{Binding Title}" HorizontalAlignment="Center" Margin="0,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="550" FontSize="20"/>
+        <TextBox Text="{Binding ArticleNumber}" HorizontalAlignment="Center" Margin="0,156,0,0" VerticalAlignment="Top" Width="550" FontSize="20"/>
+        <TextBox Text="{Binding MinCostForAgent}" HorizontalAlignment="Center" Margin="0,234,0,0" VerticalAlignment="Top" Width="550" FontSize="20"/>
 
     </Grid>
 </Page>

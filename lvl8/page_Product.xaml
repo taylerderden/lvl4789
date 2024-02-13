@@ -6,12 +6,14 @@
       xmlns:local="clr-namespace:lvl8"
       mc:Ignorable="d" 
       d:DesignHeight="359" d:DesignWidth="648"
-      Title="page_Product">
+      Title="page_Product"
+      IsVisibleChanged="AddProduct_IsVisibleChanged">
 
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="45*"/>
-            <RowDefinition Height="314*"/>
+            <RowDefinition Height="274*"/>
+            <RowDefinition Height="40*"/>
         </Grid.RowDefinitions>
         <UniformGrid Columns="3">
             <TextBox x:Name="tbSearch" Width="172"  TextChanged="tbSearch_TextChanged" Margin="22,10,22,10" />
@@ -19,7 +21,7 @@
             <ComboBox x:Name="cbFiltr" Width="172" Margin="22,10,22,10" SelectionChanged="cbFiltrChanged"/>
         </UniformGrid>
 
-        <ListView Grid.Row="1" Name="lvProduct" Margin="0,0,0,33">
+        <ListView Grid.Row="1" Name="lvProduct" Margin="0,0,0,10">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -44,6 +46,10 @@
                                 <TextBlock FontSize="20">
                                 <Run Text="{Binding ArticleNumber}"/>
                                 </TextBlock>
+                                <UniformGrid Columns="2">
+                                    <Button Content="Delete" Margin="5" FontSize="20" Click="Button_DelClick"/>
+                                    <Button Content="Update" Margin="5" FontSize="20" Click="Button_UpdateClick"/>
+                                </UniformGrid>
                             </StackPanel>
                         </Grid>
                         <Grid Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top">
@@ -55,6 +61,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Grid.Row="1" Margin="10,286,478,10" Click="Button_Click"/>
+
+        <Button Grid.Row="2" Content="Add Product" Click="Button_Click" Margin="10,0,403,10"/>
     </Grid>
 </Page>
