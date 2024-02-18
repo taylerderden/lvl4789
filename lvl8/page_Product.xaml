@@ -10,13 +10,43 @@
       IsVisibleChanged="AddProduct_IsVisibleChanged">
 
     <Page.Resources>
-        <Style TargetType="StackPanel">
+        <Style TargetType="ListViewItem">
             <Style.Setters>
                 <Setter Property="Background" Value="White" />
             </Style.Setters>
             <Style.Triggers>
+                <DataTrigger Binding="{Binding MinCostForAgent}" Value="9208.00">
+                    <Setter Property="ListViewItem.Background" Value="Green" />
+                </DataTrigger>
+
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="LightYellow" />
+                    <Setter Property="ListViewItem.Background" Value="Red" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="ListView">
+            <Style.Setters>
+                <Setter Property="Background" Value="White" />
+                <Setter Property="BorderThickness" Value="3" />
+            </Style.Setters>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="ListView.Background" Value="Red" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="Button">
+            <Style.Setters>
+                <Setter Property="BorderThickness" Value="5" />
+                <Setter Property="BorderBrush" Value="Red" />
+            </Style.Setters>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="Foreground" Value="Red" />
+                    <Setter Property="BorderBrush" Value="Gold" />
                 </Trigger>
             </Style.Triggers>
         </Style>
